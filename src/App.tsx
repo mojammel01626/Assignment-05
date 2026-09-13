@@ -9,7 +9,7 @@ import Footer from './component/Footer';
 
 
 const productDataFetch = async ():Promise<IProductTypeDeclared[]> => {
-  const response = await fetch("/public/product.json");
+  const response = await fetch("/product.json");
   const data = await response.json();
   return data;
 }

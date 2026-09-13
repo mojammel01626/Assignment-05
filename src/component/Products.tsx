@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import  { use, useState } from 'react';
 import type { IProductTypeDeclared } from './ProductDataTypes/Product';
 import LeftSideBar from './LeftSideBar';
 import RightSideBar from './RightSideBar';

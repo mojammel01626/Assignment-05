@@ -5,7 +5,8 @@ import Logo from "../assets/logo-text.png"
 
 const Navbar = () => {
     return (
-        <div className="">
+        <div className="sticky top-0 z-50 bg-white">
+            <div className="  py-[40px] ">
             <div className=" flex justify-between container mx-auto">
                 <img src={Logo} alt="" />
 
@@ -24,6 +25,7 @@ const Navbar = () => {
             </div>
         </div>
 
+        </div>
     );
 }
 

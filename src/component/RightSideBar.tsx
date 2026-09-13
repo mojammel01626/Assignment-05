@@ -1,48 +1,11 @@
-// import { RxCross2 } from 'react-icons/rx';
-// import type { IProductTypeDeclared } from './ProductDataTypes/Product';
 
-// interface IRightSideBarProps {
-//     selectedProducts: IProductTypeDeclared[];
-// }
-
-// const RightSideBar = ({ selectedProducts }: IRightSideBarProps) => {
-//     return (
-//         <div>
-//             {selectedProducts.map((product) => (
-//                 <div className=' '>
-//                     <div className='ml-6 flex justify-between items-center mb-2 rounded-2xl border border-gray-300 px-[20px] py-[10px]'>
-//                         <div className='flex gap-4'>
-//                             <img
-//                                 src={product.icon} alt="" className='h-[60px] w-[60px] ' />
-
-//                             <div>
-//                                 <h2 className='font-bold text-xl'>{product.name}</h2>
-//                                 <p className='text-gray-400'>{product.category}</p>
-//                             </div>
-//                         </div>
-//                         <div className='text-3xl text-gray-500'>
-//                             <button onClick={()=>} 
-//                             className=''> 
-//                                 <RxCross2 />
-//                             </button>
-//                         </div>
-//                     </div>
-
-//                 </div>
-
-//             ))}
-//         </div>
-//     );
-// };
-
-// export default RightSideBar;
 
 import { RxCross2 } from 'react-icons/rx';
 import type { Dispatch, SetStateAction } from 'react';
 import type { IProductTypeDeclared } from './ProductDataTypes/Product';
 import { toast } from 'react-toastify';
-import Products from './Products';
-import { DiLaravel } from 'react-icons/di';
+
+
 
 interface IRightSideBarProps {
     selectedProducts: IProductTypeDeclared[];
