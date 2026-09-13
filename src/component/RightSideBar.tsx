@@ -1,12 +1,6 @@
+import React from 'react';
 
-import type { IProductTypeDeclared } from './ProductDataTypes/Product';
-
-interface IRightSideBarProps  {
-    fetchDataProductsPushinRightSideBar:IProductTypeDeclared[];
-}
-
-const RightSideBar = ({fetchDataProductsPushinRightSideBar}:IRightSideBarProps) => {
-    console.log(fetchDataProductsPushinRightSideBar);
+const RightSideBar = () => {
     return (
         <div>
             

@@ -1,9 +1,11 @@
-import  { useState } from 'react';
+import  { useState, type Dispatch, type SetStateAction } from 'react';
 import type { IProductTypeDeclared } from './ProductDataTypes/Product';
 import { toast } from 'react-toastify';
 
 interface ILeftSideBarProps  {
     fetchDataProductsPushinLeftSideBar:IProductTypeDeclared[];
+    selectedPlayerPushLeftBar:object[];
+    selectedPlayerPushRightBar: Dispatch<SetStateAction<object[]>>;
 }
 
 
@@ -70,15 +72,13 @@ const LeftSideBar = ({ fetchDataProductsPushinLeftSideBar }: ILeftSideBarProps) 
 
                            
                             <div>
-                                
                                 <p className="mt-1 flex justify-center  text-sm font-semibold text-slate-700">
                                     {product.difficulty}
                                 </p>
                             </div>
 
                            
-                            <div>
-                                
+                            <div>                                
                                 <p className="mt-1  flex justify-end  gap-1 text-sm font-semibold text-slate-700">
                                     <span className="text-yellow-400">★</span>
                                     {product.rating}
@@ -86,19 +86,15 @@ const LeftSideBar = ({ fetchDataProductsPushinLeftSideBar }: ILeftSideBarProps) 
                             </div>
 
                         </div>
-
-
                    
                         <div className="mt-5 flex items-center justify-between">
                             
-                            <button onClick={()=> {
-                                setIsClick(true),
+                            <button onClick={()=> {setIsClick(true);
                                 toast.success("Technology added to stack!");
                             }
                             
-                        } 
-                                
-                            className="btn btn-neutral" 
+                        }  
+                        className="btn btn-neutral" 
                           disabled={IsClick===true?true:false}
                             >
                                 {IsClick === true? "Selected":"Add to Strak"}

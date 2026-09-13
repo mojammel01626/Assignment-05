@@ -4,6 +4,7 @@ import Banner from './component/Banner';
 import Products from './component/Products';
 import type { IProductTypeDeclared } from './component/ProductDataTypes/Product';
 import { ToastContainer } from 'react-toastify';
+import Footer from './component/Footer';
 
 
 
@@ -25,6 +26,7 @@ const fetchData= productDataFetch();
 
       <Nav/>
       <Banner/>
+      
 
       <Suspense fallback={<h2>Loadding.... </h2>}>
           <Products fetchDataPushInProducts={fetchData}/>
@@ -32,6 +34,8 @@ const fetchData= productDataFetch();
 
       <ToastContainer />
 
+      
+      <Footer/>
 
 
     </div>
