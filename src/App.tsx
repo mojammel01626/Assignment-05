@@ -1,8 +1,9 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import  { Suspense } from 'react';
 import Nav from './component/Nav';
 import Banner from './component/Banner';
 import Products from './component/Products';
 import type { IProductTypeDeclared } from './component/ProductDataTypes/Product';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -28,6 +29,8 @@ const fetchData= productDataFetch();
       <Suspense fallback={<h2>Loadding.... </h2>}>
           <Products fetchDataPushInProducts={fetchData}/>
       </Suspense>
+
+      <ToastContainer />
 
 
 
