@@ -9,7 +9,7 @@ interface IProductsPropsType {
 
 const Products = ({ fetchDataPushInProducts }: IProductsPropsType) => {
     const fetchDataProducts = use(fetchDataPushInProducts);
-    const [selectedPlayer, setSelectedPlayer] = useState();
+    const [selectedPlayer, setSelectedPlayer] = useState<IProductTypeDeclared[]>([]);
 
     return (
         <div>
@@ -19,7 +19,7 @@ const Products = ({ fetchDataPushInProducts }: IProductsPropsType) => {
             </div>
 
             <div className=' container mx-auto grid grid-cols-12'>
-                <div className='bg-amber-500 col-span-9 '>
+                <div className=' col-span-9 '>
                     <LeftSideBar
                         fetchDataProductsPushinLeftSideBar={fetchDataProducts}
                         selectedPlayerPushLeftBar={selectedPlayer}
@@ -27,11 +27,10 @@ const Products = ({ fetchDataPushInProducts }: IProductsPropsType) => {
                     />
                 </div>
 
-                <div className=' bg-amber-950 col-span-3'>
+                <div className=' col-span-3'>
                     <RightSideBar
-                        fetchDataProductsPushinRightSideBar={fetchDataProducts}
-                        selectedPlayerPushRightBar={selectedPlayer}
-                        selectedPlayerPushLeftBar={setSelectedPlayer}
+                        selectedProducts={selectedPlayer}
+                        setSelectedProducts={setSelectedPlayer}
                     />
                 </div>
             </div>
