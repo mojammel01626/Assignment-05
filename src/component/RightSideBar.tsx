@@ -32,61 +32,79 @@ if(selectedProducts.length==0){
 }
 
     return (
-        <div>
-            <h2 className='ml-6  font-semibold text-3xl '>Your Stack</h2>
-            <p className='ml-6 mb-6 text-gray-500 font-semibold '>{selectedProducts.length} Technology Selected</p>
-            
-            {selectedProducts.map((product) => (
+    <div>
+        <h2 className='ml-6 font-semibold text-3xl'>
+            Your Stack
+        </h2>
 
-                <div key={product.name}>
+        <p className='ml-6 mb-6 text-gray-500 font-semibold'>
+            {selectedProducts.length} Technology Selected
+        </p>
 
-                    <div className='ml-6 flex justify-between items-center mb-2 rounded-2xl border border-gray-300 px-[20px] py-[10px]'>
+        {selectedProducts.map((product) => (
 
-                        <div className='flex gap-4'>
+            <div key={product.name}>
 
-                            <img
-                                src={product.icon}
-                                alt={product.name}
-                                className='h-[60px] w-[60px]'
-                            />
+                <div className='ml-6 flex justify-between items-center mb-2 rounded-2xl border border-gray-300 px-[20px] py-[10px]'>
 
-                            <div>
-                                <h2 className='font-bold text-xl'>
-                                    {product.name}
-                                </h2>
+                    <div className='flex gap-4'>
 
-                                <p className='text-gray-400'>
-                                    {product.category}
-                                </p>
-                            </div>
+                        <img
+                            src={product.icon}
+                            alt={product.name}
+                            className='h-[60px] w-[60px]'
+                        />
 
-                        </div>
+                        <div>
+                            <h2 className='font-bold text-xl'>
+                                {product.name}
+                            </h2>
 
-                        <div className='text-3xl text-gray-500'>
-
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    setSelectedProducts(
-                                        selectedProducts.filter(
-                                            (item) => item.name !== product.name));
-                                            toast.success("Removed Successfully");
-                                }}
-                                className='cursor-pointer'
-                            >
-                                <RxCross2 />
-                            </button>
-
+                            <p className='text-gray-400'>
+                                {product.category}
+                            </p>
                         </div>
 
                     </div>
 
+                    <div className='text-3xl text-gray-500'>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setSelectedProducts(
+                                    selectedProducts.filter(
+                                        (item) => item.name !== product.name
+                                    )
+                                );
+                                toast.success("Removed Successfully");
+                            }}
+                            className='cursor-pointer'
+                        >
+                            <RxCross2 />
+                        </button>
+                    </div>
+
                 </div>
 
-            ))}
+            </div>
+        ))}
 
+        {/* Remove All Button */}
+        <div className='ml-6 mt-4'>
+            <button
+                type="button"
+                onClick={() => {
+                    setSelectedProducts([]);
+                    toast.success("All Technologies Removed");
+                }}
+                className='w-full rounded-xl bg-red-500 px-5 py-3 font-semibold text-white hover:bg-red-600 cursor-pointer'
+            >
+                Remove All
+            </button>
         </div>
-    );
+
+    </div>
+);
 };
 
 export default RightSideBar;
